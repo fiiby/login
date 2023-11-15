@@ -1,7 +1,7 @@
-
+import React from 'react'
 import './index.css';
 
-import login from'./login'
+import login from'../src/Components/login'
 
 function App() {
   return (
