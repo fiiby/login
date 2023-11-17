@@ -5,9 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  background: linear-gradient(#226ea1,
-  #4d4b52);
+  height: 150vh;
+  width: 100vh; 
+  padding-left: 25%;
+  background: linear-gradient( #43e0d5,#226ea1);
+ 
 }
 h2{
   font-size:small
@@ -16,12 +18,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar {
+display: flex;
+flex-direction: row;
+  /* padding: 10%; */
+margin-top: 40px;
+  align-items: start;
+  background-color: #226ea1;
+  /* background-color: grey; */
+  color:black;
+  /* height:auto */
+  /* margin: 0  auto; */
+
+  border-bottom: 1px solid #121111;
+}
+link{
+    display: flex;
+  flex-direction: row;
+list-style-type: none;
+  font-size: larger;
+  color: white;
+  position: relative;
+  bottom: 0;
+  padding:10px;
+}
+/* list {
+    display: flex;
+  flex-direction: row;
+  text-decoration: none;
+} */
 .container{
   display: flex;
   flex-direction: column;
   margin:auto;
-  margin-top: 200px;
-  background: #fff;
+  margin-top: 10px;
+  background:#fff;
   padding-bottom: 30px;
 
 }
@@ -31,22 +62,39 @@ code {
   align-items: center;
   gap:9px;
   width: 100;
-  margin-top:30px
+  margin-top:30px;
+  font-size: large;
 }
 .text{
 color: #226ea1;
-font-size: 40px;
+font-size: 50px;
 font-weight:700;
 }
 .underline{
+  margin-left: 47%;
   width: 61px;
   height:6px;
   background-color: #226ea1;
   border-radius: 9px;
 }
 .inputs{
-  margin-top: 55px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap:25px;
+  gap:10px;
+  padding: 20px;
+
 }
+.input{
+display: flex;
+flex-direction: column;
+margin:auto;
+background: #eaeaea;
+border-radius: 6px;
+}
+.input img{
+  margin: 0px 30px;
+  
+}
+
+
