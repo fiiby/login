@@ -5,7 +5,8 @@ import Home from './Components/Home';
 import Register from './Components/Register';
 import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
-import { BrowseRouter as Router, Route, Switch} from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
+
 import './index.css';
 // import{ useState } from 'react';
 
@@ -37,27 +38,20 @@ const App = () => {
 
 
 
-
+// react-dom version 6:
           <Router>
       <div className="App">
         <Navbar/>
       <div className="content">
-        {/* <Home/> */}
-    <Switch>
-      <Route exact path="/">
-        <Home/>
-      </Route>
-       <Route path="/Login">
-        <Login/>
-        </Route>
-        <Route path="/Register">
-        <Register/>
-        </Route>
-        <Route path="/AddStudent">
-          <AddStudent/>
-        </Route>
-        </Switch>
+      
+        <Routes>
+          <Route path="/" element ={<Home/>}/>
+          <Route path="/Login" element = {<Login/>}/>
+          <Route path="/Register" element = {<Register/>}/>
+          <Route path="/AddStudent" element ={<AddStudent/>}/>
+        </Routes>
         </div>
+
         </div>
       </Router>
 //

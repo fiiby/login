@@ -21,32 +21,32 @@ code {
 .navbar {
 display: flex;
 flex-direction: row;
-  /* padding: 10%; */
+  justify-content: space-between;
 margin-top: 40px;
   align-items: start;
   background-color: #226ea1;
-  /* background-color: grey; */
-  color:black;
-  /* height:auto */
-  /* margin: 0  auto; */
+text-decoration: none;
+  color:white;
+   font-size: larger;
+  border-bottom: 3px solid white;
+}
 
-  border-bottom: 1px solid #121111;
-}
-link{
+ul {
     display: flex;
   flex-direction: row;
-list-style-type: none;
-  font-size: larger;
+  justify-content: space-between;
+ list-style-type: none;
+  margin-left:20;
   color: white;
-  position: relative;
-  bottom: 0;
-  padding:10px;
+  padding: 20px;
+margin: 40px;
+ 
 }
-/* list {
-    display: flex;
+li {
+  display: flex;
   flex-direction: row;
-  text-decoration: none;
-} */
+  justify-content: space-between;
+}
 .container{
   display: flex;
   flex-direction: column;
