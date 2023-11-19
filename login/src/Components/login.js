@@ -27,7 +27,7 @@ const Login = ({ handleLogin}) => {
                <div className="inputs">
                 
       <div className="input">
-         <label >   <At size={20}/><span> </span> Email:</label>
+         <label > <At size={20}/><span> </span> Email:</label>
       <input type="text" value={email} 
           onChange={(e) => setEmail(e.target.value)} /> 
         <br />
@@ -38,7 +38,7 @@ const Login = ({ handleLogin}) => {
       <br />
      </div>
    <div className="input">
-      <button type="submit">Login</button> 
+      <button  className="btn" type="submit">Login</button> 
       </div>
    </div>
   

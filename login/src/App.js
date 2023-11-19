@@ -5,12 +5,10 @@ import Home from './Components/Home';
 import Register from './Components/Register';
 import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
+import Dashboard from './Components/Dashboard';
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
-
 import './index.css';
 // import{ useState } from 'react';
-
-
 
 
 const App = () => {
@@ -27,21 +25,11 @@ const App = () => {
   // };
 
   return (
-    // <div>
-    //     <Navbar/>
-    //            <Login/>
-    //            <Register/>
-    //            <AddStudent/>
-    
- 
-    // </div>
-
-
-
 // react-dom version 6:
           <Router>
       <div className="App">
         <Navbar/>
+      
       <div className="content">
       
         <Routes>
@@ -49,6 +37,7 @@ const App = () => {
           <Route path="/Login" element = {<Login/>}/>
           <Route path="/Register" element = {<Register/>}/>
           <Route path="/AddStudent" element ={<AddStudent/>}/>
+           <Route path="/dashboard" element ={<Dashboard/>}/>
         </Routes>
         </div>
 

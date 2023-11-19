@@ -22,6 +22,7 @@ code {
 display: flex;
 flex-direction: row;
   justify-content: space-between;
+  padding-left: 10p;
 margin-top: 40px;
   align-items: start;
   background-color: #226ea1;
@@ -29,24 +30,29 @@ text-decoration: none;
   color:white;
    font-size: larger;
   border-bottom: 3px solid white;
+
 }
 
 ul {
     display: flex;
   flex-direction: row;
   justify-content: space-between;
- list-style-type: none;
+ /* /* list-style-type: none;  */
+   text-decoration: none;
   margin-left:20;
-  color: white;
+
   padding: 20px;
 margin: 40px;
  
 }
-li {
+.list_txt {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+  padding:0 40px;
+  /* color: #fff; */
+
+} 
 .container{
   display: flex;
   flex-direction: column;
@@ -64,17 +70,23 @@ li {
   width: 100;
   margin-top:30px;
   font-size: large;
+  /* color: grey; */
+  color:#226ea1;
 }
 .text{
 color: #226ea1;
-font-size: 50px;
-font-weight:700;
+font-size: 25px;
+font-weight:20;
+/* list-style: none; */
+text-decoration: none;
+background-color:white; 
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .underline{
   margin-left: 47%;
   width: 61px;
   height:6px;
-  background-color: #226ea1;
+  background-color:#226ea1;
   border-radius: 9px;
 }
 .inputs{
@@ -91,10 +103,7 @@ flex-direction: column;
 margin:auto;
 background: #eaeaea;
 border-radius: 6px;
-}
-.input img{
-  margin: 0px 30px;
-  
+width: 250px;
 }
 
 
