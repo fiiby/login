@@ -1,12 +1,21 @@
 import React from 'react';
-// import Dashboard from './Components/Dashboard';
+
 import {Link} from 'react-router-dom';
 
 const TopBar = () => {
   return (
-    <div>
-        <h1>TopBar</h1>
-     <Link to="/"> Go To Web Site</Link>
+    <div className="d-flex" >
+        <h1>Student</h1>
+        <div>
+ <div className="top-bar">
+          <Link to="/"  className="d-flex1">   Go To Web Site</Link>
+        </div>
+       
+        </div>
+    
+
+
+
         </div>
 
   );

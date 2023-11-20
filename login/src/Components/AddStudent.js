@@ -3,8 +3,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import {Student} from 'phosphor-react';
 import 'react-toastify/dist/ReactToastify.css';
-// import {ToastContainer}
-import {toast} from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 
 
 
@@ -13,7 +12,7 @@ const AddStudent= ()=>{
   const [data, setData]=useState({
     firstName:"",
     lastName:"",
-    gender:""
+    // gender:""
   })
   const handleChange = (e)=>{
     setData({...data, [e.target.name]: e.target.value})
@@ -29,10 +28,11 @@ const AddStudent= ()=>{
       setData(data);
     })
     .catch(err => {
-      toast.error('There is an error with your input', {
-        position:toast.POSITION.TOP_RIGHT, 
-        autoCLose:3000,
-      });
+      // toast.error('There is an error with your input', {
+      //   position:toast.POSITION.TOP_RIGHT, 
+      //   autoCLose:3000,
+      // });
+      console.log(err.message)
     })
   }
 
@@ -47,8 +47,7 @@ const AddStudent= ()=>{
           <span> </span>
           First name:
           </label>
-         <input type="text"/>
-          {/* value={password} onChange={(e) => setPassword(e.target.value)} /> */}
+         <input type="text" name='firstName'  onChange={handleChange} placeholder=" enter First Name"  required />
           <br />
         </div>
         <div className="input">
@@ -57,14 +56,14 @@ const AddStudent= ()=>{
           <span> </span>
           Last name:
           </label>
-         <input type="text"/>
-          {/* value={password} onChange={(e) => setPassword(e.target.value)} /> */}
+         <input type="text" name='lastName' onChange={handleChange}  placeholder=" enter Last Name"  required/>
+        
           <br />
         </div>
     
         <div className="input">
-          <button >Submit</button>
-          {/* onClick={handleSignup}>Signup</button> */}
+          <button type="submit" >Submit</button>
+           <ToastContainer/>
         </div>
       </div>
       

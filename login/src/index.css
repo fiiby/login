@@ -105,5 +105,34 @@ background: #eaeaea;
 border-radius: 6px;
 width: 250px;
 }
+.d-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:#226ea1;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-shadow: 2px 2px 2px grey;
+}
 
+.d-flex1{
+padding: 10px;
+background-color:#226ea1;
+color:white;
+text-decoration: none;
+font-weight:300;
 
+}
+.dot{
+  text-decoration: none;
+}
+.top-bar {
+
+}
+.side-bar{
+padding: 10px;
+border-right: 1px solid gray;
+}
+.item-link{
+  text-decoration: none;
+  font-size: 20px;
+}

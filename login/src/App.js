@@ -1,11 +1,10 @@
 import React from 'react'
-
 import Login from'./Components/Login';
 import Home from './Components/Home';
 import Register from './Components/Register';
 import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
-import Dashboard from './Components/Dashboard';
+import Dashboard from './Dashboard';
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import './index.css';
 // import{ useState } from 'react';
@@ -43,19 +42,6 @@ const App = () => {
 
         </div>
       </Router>
-//
-//  <Router>
-//       <Navbar/>
-//         < user={user} handleLogout={handleLogout} /> 
-//       <Switch>
-//         <Route path="/" exact component={Home} /> 
-//      <Route
-//           path="/login"
-//           render={(props) => <Login {...props} handleLogin={handleLogin} />}
-//         /> 
-//      <Route path="/signup" component={Signup} /> 
-//  </Switch> 
-//      </Router> 
     
   );
 }
