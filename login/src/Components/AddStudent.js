@@ -19,7 +19,15 @@ const AddStudent= ()=>{
   }
   const saveStudent=(e)=>{
     e.preventDefault()
-    axios.post('http://localhost:4000/student', data)
+
+    const token = sessionStorage.getItem("access_token")
+
+    axios.post('http://localhost:4000/student', data, {
+      headers: {
+        Authorization: `Bearer ${token} `,
+        "content-type":'application/json',
+      },
+    })
     .then(res=>{
       toast.success('New Student added successfully', {
         position:toast.POSITION.TOP_RIGHT, 
@@ -28,11 +36,11 @@ const AddStudent= ()=>{
       setData(data);
     })
     .catch(err => {
-      // toast.error('There is an error with your input', {
-      //   position:toast.POSITION.TOP_RIGHT, 
-      //   autoCLose:3000,
-      // });
-      console.log(err.message)
+      toast.error('There is an error with your input', {
+        position:toast.POSITION.TOP_RIGHT, 
+        autoCLose:3000,
+      });
+      // console.log(err.message)
     })
   }
 

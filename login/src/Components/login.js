@@ -10,6 +10,7 @@ import axios from 'axios';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error,setError] = useState('');
 
  const  handleEmail = (e) => {
   setEmail(e.target.value);
@@ -17,7 +18,8 @@ const Login = () => {
 const handlePassword = (e)=>{
     setPassword(e.target.value)
   }
-  const saveStudent =(e) =>{
+
+  const loginUser =(e) =>{
     e.preventDefault()
     axios.post('http://localhost:4000/User', {email,password})
     .then(res=>{
@@ -29,15 +31,15 @@ const handlePassword = (e)=>{
       // setLogin(login);
     })
     .catch(err => {
-      // toast.error('There is an error with your input', {
-      //   position:toast.POSITION.BOTTOM_RIGHT,
-      //   autoclose:3000,
-      // });
-      console.log(err.message)
+      toast.error('There is an error with your input', {
+        position:toast.POSITION.BOTTOM_RIGHT,
+        autoclose:3000,
+      });
+      // console.log(err.message)
     })
   }
   return (
-    <form  className = "container" onSubmit={saveStudent} >
+    <form  className = "container" onSubmit={loginUser} >
       <h2 className="header">Login</h2>
                <div className = "underline"></div>
                <div className="inputs">
