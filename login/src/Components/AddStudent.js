@@ -1,4 +1,5 @@
 import React from 'react';
+// import {button}
 import {useState} from 'react';
 import axios from 'axios';
 import {Student} from 'phosphor-react';
@@ -69,8 +70,8 @@ const AddStudent= ()=>{
           <br />
         </div>
     
-        <div className="input">
-          <button type="submit" >Submit</button>
+        <div className="submit-container">
+          <button className="btn" type="submit" >Submit</button>
            <ToastContainer/>
         </div>
       </div>

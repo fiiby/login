@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { UserCircle, At, Password } from 'phosphor-react';
+import { UserCircle, Envelope, Password } from 'phosphor-react';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -23,34 +23,34 @@ const Register = () => {
       <div className="inputs">
         <div className="input">
           <label>
-            <UserCircle size={25} />
+            <UserCircle size={30} />
             <span> </span>
-            Username:
+        
           </label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder=" User Name" />
           <br />
         </div>
         <div className="input">
           <label>
-            <At size={20} />
+         <Envelope size={30} />
             <span> </span>
-            Email:
+            
           </label>
-          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="  Enter Email" />
           <br />
         </div>
         <div className="input">
           <label>
-            <Password size={20} />
+            <Password size={30} />
             <span> </span>
-            Password:
+          
           </label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="  Enter Password" />
           <br />
         </div>
         
-        <div className="input">
-          <button type="submit">Register</button>
+        <div className="submit-container">
+          <button className="btn" type="submit">Register</button>
         </div>
       </div>
     </form>

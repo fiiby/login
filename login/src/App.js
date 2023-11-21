@@ -5,6 +5,7 @@ import Register from './Components/Register';
 import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
 import Dashboard from './Dashboard';
+import AllStudent from './Components/AllStudent';
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import './index.css';
 // import{ useState } from 'react';
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/Register" element = {<Register/>}/>
           <Route path="/AddStudent" element ={<AddStudent/>}/>
            <Route path="/dashboard" element ={<Dashboard/>}/>
+           <Route path="/AllStudent" element ={<AllStudent/>}/>
         </Routes>
         </div>
 
