@@ -30,14 +30,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AllStudent = () => {
-  const [allStudents, setAllStudents] = useState([]);
+const Students = () => {
+  const [students, setStudents] = useState([]);
 
   useEffect(() => {
     // Fetch students from the server when the component is mounted:
     axios.get('http://localhost:4000/Student')
-      .then((res) => {
-        setAllStudents(res.data);
+      .then((response) => {
+        setStudents(response.data);
       })
       .catch((error) => {
         console.error('Error fetching students', error);
@@ -46,48 +46,28 @@ const AllStudent = () => {
 
   return (
     <div>
-      
-  <h2>Student List</h2>
-
- {allStudents.map((student) => (
-  <table border="1"  key={student.id}>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>{student.firstName}</td>
-        <td>{student.lastName}</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>{student.firstName}</td>
-        <td>{student.lastName} </td>
-      </tr>
-
-    </tbody>
-  </table>
- ),
- )}
- </div>
-  );
- };
- export default AllStudent;
-      {/* <ul>
-        {allStudents.map((student) => (
-          <div key={student.id}>
-            <li>{student.firstName}</li>
-            <li>{student.lastName}</li>
-          </div>
+      <h2>Student List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>First name </th>
+             <th>Last name </th>
+          </tr>
+        </thead>
+        <tbody>
+            {students.map((students) => (
+          <tr key={students}>
+            <td>{students.firstName}</td>
+            <td>{students.lastName}</td>
+       </tr>
         ))}
-        </ul> */}
-    //   </div>
-  {/* ); */}
-    //   };
-    //   export default AllStudent;
-
+        </tbody>
+        </table> 
+     </div>
+  ); 
+   };
+ 
+ export default Students;
+     
+ 
+/////

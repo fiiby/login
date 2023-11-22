@@ -34,7 +34,7 @@ const handlePassword = (e)=>{
       sessionStorage.setItem('refresh_token', refreshToken);
 
       //Redirect or perform any other action upon successful login
-      window.location.href = '/Home'; //change the URL to ur desired route
+      window.location.href = '/Student'; //change the URL to ur desired route
     } else {
       // const message=response.data.error.message
       const errorResponse = await response.data
