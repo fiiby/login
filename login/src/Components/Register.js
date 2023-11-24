@@ -9,12 +9,14 @@ const Register = () => {
     
 
   const handleRegister = (e) => {
+    setUsername({...username, [e.target.name]: e.target.value})
     e.preventDefault();
 
     // Perform user registration logic here
     // For simplicity, just call onRegister with user data
     // onRegister({ username, email, password });
   };
+
 
   return (
     <form onSubmit={handleRegister} className="container">
