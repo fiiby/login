@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
 import Dashboard from './Dashboard';
 import AllStudent from './Components/AllStudent';
+import Update from './Components/Update'
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import './index.css';
 // import{ useState } from 'react';
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/AddStudent" element ={<AddStudent/>}/>
            <Route path="/dashboard" element ={<Dashboard/>}/>
            <Route path="/AllStudent" element ={<AllStudent/>}/>
+           <Route path="/Update" element ={<Update/>}/>
         </Routes>
         </div>
 

@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import { Envelope } from 'phosphor-react';
 import { Password } from 'phosphor-react';
-// import 'react-toastify/dist/ReactToastify.css';
+// import { Form } from 'react-router-dom';
+// import { error } from 'http-error';
+import toastify from 'react-toastify/dist/ReactToastify.css';
 // import {ToastContainer, toast} from 'react-toastify'
 import axios from 'axios';
 
@@ -63,7 +65,8 @@ const handlePassword = (e)=>{
   //   })
   // }
   return (
-    <form  className = "container" onSubmit={loginUser} >
+    <form className = "container" onSubmit={loginUser} >
+      
       <h2 className="header">Login </h2>
                <div className = "underline"></div>
                <div className="inputs">

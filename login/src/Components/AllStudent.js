@@ -222,11 +222,9 @@
 // export default AllStudent;
 
 
-
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap';
 
 const AllStudent = () => {
@@ -245,30 +243,29 @@ const AllStudent = () => {
 
   return (
     <div className="container1">
-      <h2 className="header">Student List</h2>
-      {/* <div className="underline"></div> */}
+      <h2 className="header">Students List</h2>
+      <div className="underline"></div>
       <Table striped bordered hover>
         <thead className="tbl-head">
           <tr>
-            <th className="head">#</th>
+            <th className="head">Id Number</th>
             <th className="head">First Name</th>
             <th className="head">Last Name</th>
             <th className="head">Action</th>
           </tr>
         </thead>
         <tbody>
-          {students.map((student, index) => (
-            <tr key={index + 1}>
-              <td>{index + 1}</td>
-              <td>{student.firstName}</td>
-              <td>{student.lastName}</td>
-              <td>
+          {students.map((students, index) => (
+            <tr className="tbl-row" key={index + 1} >
+              <td className="input-row">{index + 1}</td>
+              <td className="input-row">{students.firstName}</td>
+              <td className="input-row">{students.lastName}</td>
+
                 <div className="btn-div">
-                  <button className="btn-1">Update</button>
-                  <button className="btn-1">Delete</button>
-                </div>
-               
-              </td>
+             <Link><button className="btn-1">Update</button>
+              </Link>
+                <Link><button className="btn-1">Delete</button> </Link>
+               </div>
             </tr>
           ))}
         </tbody>
