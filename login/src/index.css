@@ -129,14 +129,15 @@ padding: 10px;
 }
 .tbl-row{
   /* padding-left: 10px; */
-  font-size: 15px;
+  font-size: 20px;
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
+  font-weight:bolder;
   color: #226ea1;
   
 }
 .input-row{
   padding-left: 50px;
+
  
 
 }
@@ -191,6 +192,7 @@ cursor:pointer;
   font-size: 15px;
   height: 50px;
   width: 120px;
+  cursor: pointer;
 
 }
 .d-flex{

@@ -262,12 +262,12 @@ const AllStudent = () => {
               <td className="input-row">{students.lastName}</td>
 
                 <div className="btn-div">
-             <Link><button className="btn-1">Update</button>
+             <Link><button  type="submit" className="btn-1">Update</button>
               </Link>
-                <Link><button className="btn-1">Delete</button> </Link>
+                <Link><button type="submit" className="btn-1">Delete</button> </Link>
                </div>
             </tr>
-          ))}
+          ))} 
         </tbody>
       </Table>
     </div>
