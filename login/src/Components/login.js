@@ -5,7 +5,7 @@ import { Password } from 'phosphor-react';
 // import { Form } from 'react-router-dom';
 // import { error } from 'http-error';
 import toastify from 'react-toastify/dist/ReactToastify.css';
-// import {ToastContainer, toast} from 'react-toastify'
+import {ToastContainer, toast} from 'react-toastify'
 import axios from 'axios';
 
 
@@ -26,14 +26,19 @@ const handlePassword = (e)=>{
     const loginUser = async(e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:4000/user' , {email, password})
-      if (response.status === 200) {
+      const response = await axios.post('http://localhost:4000/User' , {email, password})
 
+      if (response.status === 200) {
       const  { accessToken,refreshToken } = response.data;
 
       //save access_token in session storage 
       sessionStorage.setItem('access_token' , accessToken);
       sessionStorage.setItem('refresh_token', refreshToken);
+
+      toast.success('logged in successfully', {
+        position:toast.POSITION.TOP_CENTER,
+        autoclose:3000,
+      });
 
       //Redirect or perform any other action upon successful login
       window.location.href = '/Home'; //change the URL to ur desired route
@@ -42,28 +47,14 @@ const handlePassword = (e)=>{
       const errorResponse = await response.data
       setError(errorResponse);
     }
-  } catch (error) {
-    setError("An error occurred. Login the user Please again");
+  } catch(error ) {
+      toast.error('There is an error with your input', {
+        position:toast.POSITION.BOTTOM_RIGHT,
+        autoclose:3000,
+      });
+      // console.log(err.message)
+    }
   }
-}
-  
-  //   axios.post('http://localhost:4000/User', {email,password})
-  //   .then(res=>{
-  //     toast.success('logged in successfully', {
-  //       position:toast.POSITION.TOP_CENTER,
-  //       autoclose:3000,
-  //     });
-  //     window.location.href ='/AddStudent';
-  //     // setLogin(login);
-  //   })
-  //   .catch(err => {
-  //     toast.error('There is an error with your input', {
-  //       position:toast.POSITION.BOTTOM_RIGHT,
-  //       autoclose:3000,
-  //     });
-  //     // console.log(err.message)
-  //   })
-  // }
   return (
     <form className = "container" onSubmit={loginUser} >
       
@@ -83,7 +74,7 @@ const handlePassword = (e)=>{
      </div>
    <div className="submit-container">
       <button className="btn" type="submit">Login</button> 
-      {/* <ToastContainer/> */}
+      <ToastContainer/>
       </div>
    </div>
   

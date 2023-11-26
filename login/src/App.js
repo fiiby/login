@@ -13,17 +13,9 @@ import './index.css';
 
 
 const App = () => {
-  // const [user, setUser] = useState(null);
-
-  // const handleLogin = (userData) => {
-  //   // Implement your authentication logic here
-  //   setUser(userData);
-  // };
-
-  // const handleLogout = () => {
-  //   // Implement your logout logic here
-  //   setUser(null);
-  // };
+<div>
+  hello world
+</div>
 
   return (
 // react-dom version 6:
