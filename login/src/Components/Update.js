@@ -1,111 +1,120 @@
-// const Student = require("../model/studentModel");
-// const createError= require("http-errors")
-// const mongoose = require('mongoose')
-// import {useState} from 'react';
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useParams, useNavigate } from 'react-router-dom';
 
-// //Add student
 // const Update = () => {
-//   const [Update, setUpdate] = useState([]);
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const [student, setStudent] = useState(null);
 
 //   useEffect(() => {
-//     // Fetch students from the server when the component is mounted:
-//     axios.get('http://localhost:4000/Student')
-//       .then((response) => {
-//         setStudents(response.data);
-//       })
-//       .catch((error) => {
-//         console.error('Error fetching students', error);
-//       });
-//   }, []);
+//     // Fetch student details when the component mounts or 'id' changes
+//     axios.get(`http://localhost:4000/Student/${id}`)
+//       .then(response => setStudent(response.data))
+//       .catch(error => console.error('Error fetching student details:', error));
+//   }, [id]);
 
-//     const Update= ()=>{
-//   const [data, setData]=useState();
+//   const updateStudent = async (updatedData) => {
+//     try {
+//       // Update student data with a PATCH request
+//       await axios.patch(`http://localhost:4000/Student/${id}`, updatedData);
+//       // Navigate back to the 'AllStudent' page after successful update
+//       navigate('/Details');
+//     } catch (error) {
+//       console.error('Error updating student:', error);
+//     }
+//   };
 
-// const handleUpdate = (id) => {
-// //     // Add your logic for updating a student here
-//      setStudents({...Student, [id.target.name]: id.target.value})
-// }
+//   const handleFormSubmit = (e) => {
+//     e.preventDefault();
+//     const formData = new FormData(e.target);
+//     // Convert form data to an object
+//     const updatedData = Object.fromEntries(formData.entries());
+//     // Update the student with the new data
+//     updateStudent(updatedData);
+//   };
 
-// return(
-//  <div>
-//    <button onClick={() => handleUpdate(Student.id)}> Update </button>
-// </div>
-//     )
+//   return (
+//     <div className="">
+//       <h3>Update Student:</h3>
+//       {student ? (
+//         <div className="">
+//           <form onSubmit={handleFormSubmit}>
+//             <label>First Name:</label><br />
+//             <input type="text" name="firstName" defaultValue={student.firstName} /><br />
+
+//             <label>Last Name:</label><br />
+//             <input type="text" name="lastName" defaultValue={student.lastName} /><br />
+
+//             <button type="submit">Update</button>
+//           </form>
+    
+//       </div>
+//       ) : (
+//         <p>Loading...</p>
+//       )}
+//     </div>
+//   );
 // };
+
 // export default Update;
 
 
-// const handleUpdate = (id) => {
-  //   // Add your logic for updating a student here
-  //   console.log('Update student with ID:', id);
-  // };
-// full code here:
-//
+// corrections:
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Update = () => {
-  // State to store the list of students
-  const [students, setStudents] = useState([]);
-
-  // State to store data for updating a student
-  const [updateData, setUpdateData] = useState({
-    // Add any necessary fields for updating a student
-    // For example: name: '', age: '', etc.
-  });
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [student, setStudent] = useState(null);
 
   useEffect(() => {
-    // Fetch students from the server when the component is mounted:
-    axios.get('http://localhost:4000/Student')
-      .then((response) => {
-        setStudents(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching students', error);
-      });
-  }, []);
+    // Fetch student details when the component mounts or 'id' changes
+    axios.get(`http://localhost:4000/Student/${id}`)
+      .then(response => setStudent(response.data))
+      .catch(error => console.error('Error fetching student details:', error));
+  }, [id]);
 
-  const handleUpdate = (id) => {
-    // Find the student by id
-    const studentToUpdate = students.find(student => student.id === id);
-
-    // Add your logic for updating a student here
-    // For example, you might want to send a PUT request to the server
-    // with the updated data in updateData
-
-    // Example: Update the name of the student
-    axios.put(`http://localhost:4000/Student/${id}`, {
-      name: updateData.name,
-      // Add other fields as needed
-    })
-      .then(response => {
-        // Handle the response if necessary
-        console.log('Student updated successfully', response);
-      })
-      .catch(error => {
-        console.error('Error updating student', error);
-      });
+  const updateStudent = async (updatedData) => {
+    try {
+      // Update student data with a PATCH request
+      await axios.patch(`http://localhost:4000/Student/${id}`, updatedData);
+      // Navigate back to the 'Details' page after successful update
+      navigate('/Details');
+    } catch (error) {
+      console.error('Error updating student:', error);
+    }
   };
 
-  // Update the corresponding field in updateData when input changes
-  const handleChange = (e) => {
-    setUpdateData({ ...updateData, [e.target.name]: e.target.value });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    // Convert form data to an object
+    const updatedData = Object.fromEntries(formData.entries());
+    // Update the student with the new data
+    updateStudent(updatedData);
   };
 
   return (
-    <div>
-      {/* Render a form with input fields for updating student data */}
-      {/* Add input fields for each field you want to update */}
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={updateData.name || ''}
-        onChange={handleChange}
-      />
-      {/* Add other input fields as needed */}
-      
-      <button onClick={() => handleUpdate(Student.id)}>Update</button>
+    <div className="">
+      <h3>Update Student:</h3>
+      {student ? (
+        <div className="">
+          <form onSubmit={handleFormSubmit}>
+            <label>First Name:</label><br />
+            <input type="text" name="firstName" defaultValue={student.firstName} /><br />
+
+            <label>Last Name:</label><br />
+            <input type="text" name="lastName" defaultValue={student.lastName} /><br />
+
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

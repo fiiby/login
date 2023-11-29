@@ -28,6 +28,7 @@ const AllStudent = () => {
             <th className="head">Id Number</th>
             <th className="head">First Name</th>
             <th className="head">Last Name</th>
+           
             <th className="head">Action</th>
           </tr>
         </thead>
@@ -37,6 +38,7 @@ const AllStudent = () => {
               <td className="input-row">{index + 1}</td>
               <td className="input-row">{students.firstName}</td>
               <td className="input-row">{students.lastName}</td>
+            
 
                 <div className="btn-div">
              <Link><button  type="submit" className="btn-1">Update</button>

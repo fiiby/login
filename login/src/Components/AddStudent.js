@@ -13,7 +13,7 @@ const AddStudent= ()=>{
   const [data, setData]=useState({
     firstName:"",
     lastName:"",
-    // gender:""
+    gender:""
   })
   const handleChange = (e)=>{
     setData({...data, [e.target.name]: e.target.value})

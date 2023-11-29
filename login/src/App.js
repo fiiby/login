@@ -6,11 +6,11 @@ import Navbar from './Components/Navbar';
 import AddStudent from './Components/AddStudent';
 import Dashboard from './Dashboard';
 import AllStudent from './Components/AllStudent';
-import Update from './Components/Update'
+import Update from './Components/Update';
+import Details from './Components/Details';
+import Delete from './Components/Delete'
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import './index.css';
-// import{ useState } from 'react';
-
 
 const App = () => {
 <div>
@@ -32,7 +32,9 @@ const App = () => {
           <Route path="/AddStudent" element ={<AddStudent/>}/>
            <Route path="/dashboard" element ={<Dashboard/>}/>
            <Route path="/AllStudent" element ={<AllStudent/>}/>
-           <Route path="/Update" element ={<Update/>}/>
+            <Route path="/Update" element ={<Update/>}/>
+             <Route path="/Details" element ={<Details/>}/>
+             <Route path="/Delete" element ={<Delete/>}/> 
         </Routes>
         </div>
 
