@@ -12,7 +12,10 @@ const Navbar = () => {
                <li className="list_txt "><Link to="/register" className="dot">Register</Link></li>
                <li className="list_txt"><Link to="/AddStudent" className="dot">Add Student</Link></li>
                 <li className="list_txt"><Link to="/AllStudent" className="dot">All Students</Link></li>
-                      <li className="list_txt"><Link to="/Details" className="dot">Details</Link></li>
+                      {/* <li className="list_txt"><Link to="/Details" className="dot">Details</Link></li> */}
+                      {/* <li className="list_txt"><Link to="/Update/:id" className="dot">Update</Link></li> */}
+                     {/* <li className="list_txt"><Link to="/Delete/:id" className="dot">Delete</Link></li> */}
+
              </ul>
             </div>
         </nav>

@@ -25,25 +25,24 @@ const AllStudent = () => {
       <Table striped bordered hover>
         <thead className="tbl-head">
           <tr>
-            <th className="head">Id Number</th>
             <th className="head">First Name</th>
             <th className="head">Last Name</th>
-           
             <th className="head">Action</th>
           </tr>
         </thead>
         <tbody>
-          {students.map((students, index) => (
-            <tr className="tbl-row" key={index + 1} >
-              <td className="input-row">{index + 1}</td>
-              <td className="input-row">{students.firstName}</td>
-              <td className="input-row">{students.lastName}</td>
+          {students.map((student) => (
+            <tr className="tbl-row" key={student._id}>
+              <td className="input-row">{student.firstName}</td>
+              <td className="input-row">{student.lastName}</td>
             
 
                 <div className="btn-div">
-             <Link><button  type="submit" className="btn-1">Update</button>
+             <Link to = {`/Update/${student._id}`}><button  type="submit" className="btn-1">Update</button>
               </Link>
-                <Link><button type="submit" className="btn-1">Delete</button> </Link>
+                <Link to = {`/Delete/${student._id}`}><button type="submit" className="btn-1">Delete</button> </Link>
+              
+                <Link to = {`/Details/${student._id}`}><button type="submit" className="btn-1">Details</button> </Link>
                </div>
             </tr>
           ))} 

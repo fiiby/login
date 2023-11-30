@@ -77,7 +77,7 @@ const Delete = () => {
 
   // Effect hook to fetch student details when 'id' changes
   useEffect(() => {
-    axios.get(`http://localhost:4000/students/${id}`)
+    axios.get(`http://localhost:4000/students/${'id'}`)
       .then((response) => {
         setStudent(response.data);
       })
@@ -89,7 +89,7 @@ const Delete = () => {
   // Function to delete the student
   const deleteStudent = () => {
     if (window.confirm(`Are you sure you want to delete ${student.firstName}?`)) {
-      axios.delete(`http://localhost:4000/Student/${id}`)
+      axios.delete(`http://localhost:4000/Student/${'id'}`)
         .then(() => {
           // Redirect back to the list after deletion
           navigate('/AllStudent');
@@ -99,6 +99,7 @@ const Delete = () => {
         });
     } else {
       // Do nothing if the user cancels the deletion
+      alert("some thing wrong!");
     }
   };
 
@@ -122,3 +123,6 @@ const Delete = () => {
   );
 };
  export default Delete;
+
+
+ //

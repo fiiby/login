@@ -32,9 +32,9 @@ const App = () => {
           <Route path="/AddStudent" element ={<AddStudent/>}/>
            <Route path="/dashboard" element ={<Dashboard/>}/>
            <Route path="/AllStudent" element ={<AllStudent/>}/>
-            <Route path="/Update" element ={<Update/>}/>
-             <Route path="/Details" element ={<Details/>}/>
-             <Route path="/Delete" element ={<Delete/>}/> 
+            <Route path="/Update/:id" element ={<Update/>}/>
+             <Route path="/Details/:id" element ={<Details/>}/>
+             <Route path="/Delete/:id" element ={<Delete/>}/> 
         </Routes>
         </div>
 
