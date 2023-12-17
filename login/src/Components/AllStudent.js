@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap';
 
+
 const AllStudent = () => {
   const [students, setStudents] = useState([]);
 

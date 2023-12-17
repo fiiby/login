@@ -6,9 +6,6 @@ import {Student} from 'phosphor-react';
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer, toast} from 'react-toastify';
 
-
-
-
 const AddStudent= ()=>{
   const [data, setData]=useState({
     firstName:"",

@@ -65,6 +65,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom'
 
+
 const Delete = () => {
   // Extracting the 'id' parameter from the URL
   const { id } = useParams();
