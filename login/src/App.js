@@ -12,6 +12,7 @@ import Delete from './Components/Delete'
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import './index.css';
 
+
 const App = () => {
 <div>
   hello world
@@ -44,5 +45,6 @@ const App = () => {
     
   );
 }
+
 
 export default App;
