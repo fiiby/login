@@ -23,7 +23,6 @@ const handlePassword = (e)=>{
     e.preventDefault()
     
     axios.post('http://localhost:4000/user/login', {email, password}) //endpoint is user
-
       .then(res => {
         toast.success('logged in successfully', {
         position:toast.POSITION.TOP_CENTER,
@@ -43,6 +42,7 @@ const handlePassword = (e)=>{
       console.log(err.message)
     })
   };
+  
   return (
     <form className = "container" onSubmit={saveStudent} >
       
