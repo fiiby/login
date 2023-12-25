@@ -305,7 +305,6 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import {ToastContainer, toast} from 'react-toastify';
 
 
-
 const Register = () => {
   
   const [email, setEmail] = useState('');

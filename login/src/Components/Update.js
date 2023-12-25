@@ -194,6 +194,7 @@ const Update = () => {
       {student ? (
         <div className="">
           <form >
+
             <label>First Name:</label><br />
             <input type="text" name="firstName" defaultValue={student.firstName} /><br />
 
@@ -201,6 +202,7 @@ const Update = () => {
             <input type="text" name="lastName" defaultValue={student.lastName} /><br />
 
             <button type="submit" onSubmit={handleFormSubmit}>Update</button>
+            
           </form>
         </div>
       ) : (
