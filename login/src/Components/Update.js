@@ -188,6 +188,7 @@ const Update = () => {
     updateStudent(updatedData);
   };
 
+  
   return (
     <div className="">
       <h3>Update Student Page:</h3>
