@@ -401,8 +401,6 @@ const Register = () => {
           <br />
         </div>
 
-  
-
         <div className="submit-container">
           <button className="btn" type="submit">
             Register
