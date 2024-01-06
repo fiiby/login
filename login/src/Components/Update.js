@@ -195,6 +195,7 @@ const Update = () => {
         <div className="">
           <form >
 
+
             <label>First Name:</label><br />
             <input type="text" name="firstName" defaultValue={student.firstName} /><br />
 
