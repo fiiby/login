@@ -38,11 +38,11 @@ ul {
   flex-direction: row;
   justify-content: space-between;
  /* /* list-style-type: none;  */
-   text-decoration: none;
+  text-decoration: none;
   margin:20;
   padding: 40px;
 margin: 40px;
- 
+
 }
 .list_txt {
   display: flex;
@@ -139,14 +139,12 @@ padding: 10px;
 .input-row{
   padding-left: 40px;
 
- 
-
 }
 .head {
   padding-top:10;
   height: 50px;
   width: 10px;
- 
+
 }
 .input input{
 height: 50px;
